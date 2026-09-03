@@ -1,0 +1,603 @@
+/* === GOOGLE FONT IMPORT === */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* === CSS VARIABLES & GLOBAL STYLES === */
+:root {
+  /* Colors */
+  --blue-primary: #0061ff;
+  --blue-secondary: #1d4ed8;
+  --blue-dark: #1e3a8a;
+  --blue-light: #e0e7ff;
+  --blue-highlight-start: #0077ff;
+  --blue-highlight-end: #00c2ff;
+  
+  --amber-primary: #fbbf24;
+  --amber-dark: #f59e0b;
+  
+  --text-light: #ffffff;
+  --text-light-muted: #e0e7ff;
+  --text-dark: #0f172a;
+  --text-dark-muted: #374151;
+  
+  --bg-light-1: #ffffff;
+  --bg-light-2: #f8fafc;
+  --bg-light-3: #f9fafc;
+
+  /* Typography */
+  --font-family-base: "Poppins", sans-serif;
+
+  /* Sizing & Radius */
+  --border-radius-pill: 50px;
+  --border-radius-lg: 18px;
+  --border-radius-md: 12px;
+
+  /* Effects */
+  --shadow-sm: 0 6px 18px rgba(0, 0, 0, 0.07);
+  --shadow-md: 0 8px 25px rgba(0, 0, 0, 0.1);
+  --transition-fast: all 0.3s ease;
+}
+
+/* === BASE RESET === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-base);
+  background-color: var(--bg-light-1);
+  color: var(--text-dark-muted);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+  color: var(--blue-primary);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* === HEADER & HERO SECTION === */
+.hero {
+  background: linear-gradient(135deg, var(--blue-primary), var(--blue-secondary));
+  color: var(--text-light);
+  padding: 100px 60px;
+  border-radius: 0 0 40px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-buttons {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 18px;
+  border-radius: var(--border-radius-pill);
+  transition: var(--transition-fast);
+}
+
+.btn.client {
+  background: var(--text-light);
+  color: var(--blue-dark);
+}
+
+.btn.client:hover {
+  background: var(--blue-light);
+}
+
+.btn.agency {
+  background: var(--amber-primary);
+  color: var(--blue-dark);
+  box-shadow: 0 4px 12px rgba(247, 215, 122, 0.18);
+}
+
+.btn.agency:hover {
+  background: var(--amber-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(230, 193, 83, 0.18);
+}
+
+.hero-content {
+  max-width: 800px;
+  margin-top: 100px;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--amber-primary);
+  color: var(--blue-dark);
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: var(--border-radius-pill);
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: 38px;
+  line-height: 1.3;
+  margin-bottom: 10px;
+  color: var(--text-light);
+}
+
+.hero p {
+  font-size: 17px;
+  color: var(--text-light-muted);
+}
+
+/* === GENERAL SECTION STYLING === */
+section {
+  padding: 80px 10%;
+  text-align: center;
+}
+
+section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  color: var(--blue-secondary);
+}
+
+section h2 .bi {
+  margin-right: 8px;
+}
+
+.card, .how-card, .agency-card {
+  transition: var(--transition-fast);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-sm);
+  background: var(--bg-light-1);
+}
+
+.card:hover, .how-card:hover, .agency-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-md);
+}
+
+/* === PLATFORM OVERVIEW === */
+.overview {
+  background-color: var(--bg-light-3);
+}
+
+.overview-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.overview .card {
+  flex: 1 1 300px;
+  max-width: 380px;
+  padding: 30px 25px;
+}
+
+.overview .card h3 {
+  font-size: 1.5rem;
+  color: var(--blue-primary);
+  margin-bottom: 12px;
+}
+
+.overview .card p {
+  line-height: 1.6;
+}
+
+.card.blue {
+  border-top: 5px solid var(--blue-primary);
+}
+
+.card.yellow {
+  border-top: 5px solid var(--amber-primary);
+}
+
+/* === HOW IT WORKS SECTION === */
+.how-it-works {
+  background: var(--bg-light-2);
+}
+
+.how-cards {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 10px 10px 20px 10px; /* Added padding so shadows aren't cut off */
+  margin: 0 -10px; /* Counteract padding for alignment */
+}
+
+.how-card {
+  padding: 25px;
+  width: 280px;
+  flex-shrink: 0;
+  text-align: left; /* Aligns card content left, looks cleaner */
+}
+
+.how-card .icon {
+  font-size: 2rem;
+  color: var(--blue-highlight-start);
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 119, 255, 0.08);
+  border-radius: var(--border-radius-md);
+  margin-bottom: 15px;
+}
+
+.how-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.how-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.how-card .cta {
+  margin-top: 10px;
+  display: inline-block;
+  font-weight: 600;
+  color: var(--blue-highlight-start);
+}
+
+/* Highlighted Card */
+.how-card.highlight {
+  background: linear-gradient(135deg, var(--blue-highlight-start), var(--blue-highlight-end));
+  color: var(--text-light);
+}
+
+.how-card.highlight h3,
+.how-card.highlight .cta {
+  color: var(--text-light);
+}
+
+.how-card.highlight p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.how-card.highlight .icon {
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--text-light);
+}
+
+/* === TOP AGENCIES SECTION === */
+.top-agencies {
+  background-color: var(--bg-light-1);
+}
+
+.agency-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 35px;
+  margin-top: 20px;
+  text-align: left;
+}
+
+.agency-card {
+  padding: 20px;
+  overflow: hidden; /* Ensures image corners are rounded */
+}
+
+.agency-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--border-radius-md);
+  margin-bottom: 15px;
+}
+
+.agency-card h3 {
+  color: var(--blue-secondary);
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+
+.agency-card p {
+  font-size: 0.95rem;
+}
+
+.text-warning {
+  color: var(--amber-primary) !important; /* Overrides default Bootstrap color */
+}
+
+/* === ABOUT SECTION === */
+.about {
+  background-color: var(--bg-light-2);
+}
+
+.about p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* === RESPONSIVE MEDIA QUERIES === */
+@media (max-width: 768px) {
+  section {
+    padding: 60px 6%;
+  }
+
+  section h2 {
+    font-size: 1.8rem;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 80px 20px;
+    border-radius: 0;
+  }
+  .login-buttons {
+    position: static;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  .hero-content {
+    margin-top: 0;
+    text-align: center;
+  }
+  .hero h1 {
+    font-size: 26px;
+  }
+  
+  /* Overview */
+  .overview .card {
+    padding: 25px 20px;
+  }
+
+  /* How It Works */
+  .how-cards {
+    padding-left: 6%; /* Aligns first card with section padding */
+    padding-right: 6%; /* Aligns last card with section padding */
+  }
+  .how-card {
+    width: 260px;
+  }
+
+  /* Agencies */
+  .agency-card img {
+    height: 180px;
+  }
+}
+/* ===== Chatbot Floating Widget (modal) ===== */
+.chat-widget-btn {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#0ea5e9,#2563eb);
+  color: #fff;
+  font-size: 22px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 12px 28px rgba(37,99,235,0.18);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* small hover lift */
+.chat-widget-btn:hover {
+  transform: translateY(-4px);
+  transition: transform .14s ease;
+}
+
+/* Modal overlay and content */
+.chat-modal {
+  position: fixed;
+  inset: 0;
+  display: none; /* toggled by JS */
+  align-items: center;
+  justify-content: center;
+  background: rgba(10,11,12,0.45);
+  z-index: 9998;
+  padding: 20px;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+}
+.chat-modal-content {
+  width: 420px;
+  max-width: calc(100% - 40px);
+  height: 680px;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(12,22,50,0.25);
+  position: relative;
+  display:flex;
+  flex-direction: column;
+}
+.chat-modal-close {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 10;
+  padding: 6px;
+  color: #111827;
+}
+
+/* iframe that shows your ChatBot.html */
+.chat-modal-content iframe {
+  border: 0;
+  width: 100%;
+  height: 100%;
+}
+/* ================= NEW SECTIONS ================= */
+
+.features {
+  background: var(--bg-light-1);
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+}
+
+.feature-box {
+  padding: 30px;
+  background: var(--bg-light-2);
+  border-radius: 18px;
+  box-shadow: var(--shadow-sm);
+  transition: all .3s ease;
+}
+
+.feature-box:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-md);
+}
+
+.feature-box i {
+  font-size: 2.3rem;
+  color: var(--blue-primary);
+  margin-bottom: 15px;
+}
+
+.stats {
+  background: linear-gradient(135deg, var(--blue-primary), var(--blue-secondary));
+  color: white;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+  gap: 30px;
+}
+
+.stat h3 {
+  font-size: 2.5rem;
+}
+
+.cta-section {
+  background: var(--bg-light-2);
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.cta-btn {
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-weight: 600;
+}
+
+.cta-btn.primary {
+  background: var(--blue-primary);
+  color: white;
+}
+
+.cta-btn.secondary {
+  background: var(--amber-primary);
+  color: var(--blue-dark);
+}
+/* === FIX HOW IT WORKS ALIGNMENT (DESKTOP CENTERED) === */
+@media (min-width: 992px) {
+  .how-cards {
+    justify-content: center;
+    overflow-x: visible;
+    margin: 0;
+  }
+}
+/* === POPULAR DESTINATIONS SECTION === */
+.popular-destinations {
+  background: var(--bg-light-3);
+}
+
+.destination-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.destination-card {
+  padding: 30px;
+  background: var(--bg-light-1);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-sm);
+  text-align: left;
+  transition: var(--transition-fast);
+  border-top: 4px solid var(--blue-primary);
+}
+
+.destination-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-md);
+}
+
+.destination-card h3 {
+  color: var(--blue-secondary);
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.destination-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+/* === FYP FOOTER NOTE (COMPACT & CLEAN) === */
+
+/* === POPULAR DESTINATIONS WITH IMAGES === */
+.destination-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: var(--border-radius-md);
+  margin-bottom: 14px;
+}
+/* === SITE FOOTER (FYP) === */
+.site-footer {
+  background: #f9fafb;
+  border-top: 1px solid #e5e7eb;
+  padding: 22px 10%;
+  text-align: center;
+}
+
+.site-footer p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+.site-footer .footer-note {
+  margin-top: 4px;
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
